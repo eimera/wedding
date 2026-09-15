@@ -669,6 +669,7 @@ blockquote {
 .bonus-section {
   padding: 20px 4vw 90px;
   display: flex;
+  justify-content: center;
   gap: 10px;
   background: #f5f0e8;
 }
@@ -676,6 +677,8 @@ blockquote {
   min-height: 250px;
   padding: 35px;
   text-align: center;
+  width: 100%;
+  max-width: 600px;
 }
 .universe { color: white; background: var(--forest); border-radius: 4px; }
 .universe h2, .bonus-card h2 { font-size: 31px; margin: 0 0 18px; }
@@ -725,7 +728,6 @@ footer {
   .theme-card { position: static; transform: none; margin: 45px auto 0; }
   .timeline { width: 100%; }
   .info-grid { grid-template-columns: repeat(3, 1fr); }
-  .bonus-section { grid-template-columns: 1fr; }
 }
 @media (max-width: 650px) {
   .site-header { height: 62px; }
