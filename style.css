@@ -185,7 +185,7 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .heb-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 1000px) {
-  .hero-cat { width: 140px; height: 190px; bottom: -100px; }
+  .hero-cat { width: 140px; height: 190px; bottom: -75px; }
   .hero-flower { width: 110px; height: 145px; top: -75px; }
 }
 @media (max-width: 650px) {
