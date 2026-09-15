@@ -668,8 +668,7 @@ blockquote {
 
 .bonus-section {
   padding: 20px 4vw 90px;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: 10px;
   background: #f5f0e8;
 }
