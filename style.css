@@ -96,7 +96,7 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
 }
 .hero-cat {
   position: absolute;
-  top: -200px;
+  top: -210px;
   left: 50%;
   transform: translateX(-50%);
   width: 150px;
