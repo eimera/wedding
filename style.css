@@ -94,9 +94,14 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   z-index: 5;
   height: 0;
 }
+.hero-cat-wrap {
+  position: relative;
+  z-index: 5;
+  height: 0;
+}
 .hero-cat {
   position: absolute;
-  bottom: -300px;
+  top: -180px;
   left: 50%;
   transform: translateX(-50%);
   width: 150px;
