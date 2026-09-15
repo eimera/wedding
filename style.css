@@ -191,9 +191,6 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .hero-cat { width: 85px; height: 115px; top: -55px; }
   .hero-flower { width: 85px; height: 115px; top: -48px; }
 }
-@media (max-width: 650px) {
-  .hero-cat-wrap { display: none; }
-}
 .constellation { letter-spacing: 18px; color: #f3dfb4; margin-bottom: 30px; }
 .eyebrow { font-size: 15px; letter-spacing: .22em; font-weight: 600; }
 .light { color: white; }
