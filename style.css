@@ -442,7 +442,7 @@ blockquote {
    margin: auto;
    display: flex;
    flex-direction: column;
-   gap: 50px;
+   gap: 32px;
 }
 .contact-columns {
   max-width: 850px;
