@@ -89,3 +89,19 @@ sections.forEach(section => observer.observe(section));
   window.addEventListener('resize', updateButtons);
   updateButtons();
 })();
+
+const menuBtn = document.querySelector('.menu');
+const mainNav = document.querySelector('nav');
+
+if (menuBtn && mainNav) {
+  menuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+
+  // referme le menu automatiquement quand on clique un lien
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+    });
+  });
+}

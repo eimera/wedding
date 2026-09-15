@@ -729,6 +729,30 @@ footer {
   .timeline { width: 100%; }
   .info-grid { grid-template-columns: repeat(3, 1fr); }
 }
+@media (max-width: 1000px) {
+  nav {
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: rgba(19, 43, 4, 0.97);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+  nav.open {
+    display: flex;
+    max-height: 400px;
+  }
+  nav a {
+    padding: 18px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
 @media (max-width: 650px) {
   .site-header { height: 62px; }
   .brand { font-size: 25px; }
