@@ -442,7 +442,7 @@ blockquote {
    margin: auto;
    display: flex;
    flex-direction: column;
-   gap: 26px;
+   gap: 50px;
 }
 .contact-columns {
   max-width: 850px;
@@ -712,7 +712,7 @@ footer {
   min-height: 115px;
   padding: 30px 5vw;
   color: #e7e0d4;
-  background: #10231f;
+  background: #03472d;
   display: flex;
   justify-content: space-between;
   align-items: center;
