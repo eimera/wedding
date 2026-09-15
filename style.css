@@ -34,7 +34,7 @@ button { font: inherit; }
   align-items: center;
   justify-content: space-between;
   padding: 0 4vw;
-  background: rgba(19, 43, 4, 0.93);
+  background: #03472d;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(40,51,47,.08);
 }
