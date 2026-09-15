@@ -96,13 +96,15 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
 }
 .hero-cat {
   position: absolute;
-  top: -220px;
-  left: 46vw;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 150px;
   height: 400px;
   object-fit: cover;
   object-position: 50% 20%;
   border-radius: 6px;
+  z-index: 5;
 }
 .hero-flower-wrap {
   position: relative;
