@@ -50,46 +50,43 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
+// Carrousel de photos corrigé
 (function () {
   const strip = document.getElementById('photosStrip');
   const prevBtn = document.getElementById('photosPrev');
   const nextBtn = document.getElementById('photosNext');
-  if (!strip) return;
+  if (!strip || !prevBtn || !nextBtn) return;
 
-  function scrollAmount() {
-    const card = strip.querySelector('.photo-card');
-    const gap = 20;
-    return card ? (card.offsetWidth + gap) * 2 : 300;
+  let currentIndex = 0;
+  const cards = strip.querySelectorAll('.photo-card');
+  
+  function updateScroll() {
+    if (cards.length === 0) return;
+    const cardWidth = cards[0].offsetWidth + 20; // 20px de gap
+    strip.scrollTo({
+      left: currentIndex * cardWidth,
+      behavior: 'smooth'
+    });
   }
-
-  function isAtEnd() {
-    const maxScroll = strip.scrollWidth - strip.clientWidth - 2;
-    return strip.scrollLeft >= maxScroll;
-  }
-
-  function updateButtons() {
-    prevBtn.disabled = strip.scrollLeft <= 0;
-    // le bouton "suivant" reste toujours actif puisqu'il boucle
-    nextBtn.disabled = false;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    strip.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-  });
 
   nextBtn.addEventListener('click', () => {
-    if (isAtEnd()) {
-      strip.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      strip.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    currentIndex++;
+    if (currentIndex >= cards.length - 3) { 
+      currentIndex = 0; // Revient au début
     }
+    updateScroll();
   });
 
-  strip.addEventListener('scroll', updateButtons);
-  window.addEventListener('resize', updateButtons);
-  updateButtons();
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = cards.length - 4; 
+    }
+    updateScroll();
+  });
 })();
 
+// Gestion du menu mobile
 const menuBtn = document.querySelector('.menu');
 const mainNav = document.querySelector('nav');
 
