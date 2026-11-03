@@ -74,8 +74,13 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   display: grid;
   place-items: center;
   overflow: hidden;
+
   background:
-    linear-gradient(120deg, rgba(31, 32, 32, 0.45), rgba(62,42,35,.05)),
+    linear-gradient(
+      135deg,
+      rgba(74, 81, 100, 0.58),
+      rgba(15, 35, 65, 0.38)
+    ),
     url("assets/chateau.png") center/cover;
 }
 .hero-overlay {
@@ -122,6 +127,25 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   object-position: 50% 20%;
   border-radius: 6px;
 }
+.hero-content h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 20px 0;
+  color: #ffffff;
+}
+.hero-content h1 span {
+  color: #e5c6a0;
+}
+.hero-content .eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #ffffff;
+}
+
 .heb-hero { padding-top: 150px; background: var(--paper); }
 .heb-intro {
   max-width: 620px;
@@ -192,7 +216,7 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .hero-cat { width: 200px; height: 250px; top: -150px; }
   .hero-flower { width: 85px; height: 115px; top: -48px; }
 }
-.constellation { letter-spacing: 18px; color: #f3dfb4; margin-bottom: 30px; }
+.constellation { font-size: 32px; letter-spacing: 18px; color: #f3dfb4; margin-bottom: 30px; }
 .eyebrow { font-size: 15px; letter-spacing: .22em; font-weight: 600; }
 .light { color: white; }
 .hero h1, h2 {
@@ -200,7 +224,7 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   font-weight: 400;
 }
 .hero h1 {
-  font-size: clamp(40px, 6.5vw, 92px);
+  font-size: clamp(40px, 6.5vw, 100px);
   line-height: 1.05;
   letter-spacing: .01em;
   margin: 12px 0;
@@ -209,12 +233,12 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
 .hero h1 span { font-style: normal; }
 .date {
   letter-spacing: .3em;
-  font-size: 20px;
+  font-size: 30px;
   margin: 25px 0;
 }
 .hero-script {
   font-family: "Parisienne", cursive;
-  font-size: 28px;
+  font-size: 40px;
   line-height: 1.2;
   margin: 30px 0 45px;
 }
@@ -222,11 +246,20 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
 .countdown div { min-width: 65px; }
 .countdown strong {
   display: block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 40px;
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: #ffffff;
 }
-.countdown small { font-size: 8px; letter-spacing: .18em; }
+
+.countdown small {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 450;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
 .scroll-link {
   position: absolute;
   right: -28vw;
