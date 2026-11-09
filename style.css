@@ -216,7 +216,17 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .hero-cat { width: 200px; height: 250px; top: -150px; }
   .hero-flower { width: 85px; height: 115px; top: -48px; }
 }
-.constellation { font-size: 32px; letter-spacing: 18px; color: #f3dfb4; margin-bottom: 30px; }
+.constellation {
+  font-size: 32px;
+  letter-spacing: 18px;
+  color: #f3dfb4;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 .eyebrow { font-size: 15px; letter-spacing: .22em; font-weight: 600; }
 .light { color: white; }
 .hero h1, h2 {
@@ -511,7 +521,29 @@ blockquote {
 .contact-person p a { text-decoration: underline; }
 
 @media (max-width: 650px) {
-  .contact-columns { flex-direction: column; align-items: center; gap: 40px; }
+
+  /* Recentrage du château */
+  .hero {
+    background-position: center, 58% center;
+    background-size: cover, cover;
+  }
+
+  /* Étoiles sur une seule ligne */
+  .constellation {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    letter-spacing: 10px;
+    white-space: nowrap;
+  }
+
+  .constellation br {
+    display: none;
+  }
+
 }
 
 .photos-strip-wrap { position: relative; max-width: 1500px; margin: 0 auto; }
