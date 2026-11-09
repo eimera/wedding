@@ -50,39 +50,57 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
-// Carrousel de photos corrigé
+// CARROUSEL DE PHOTOS
 (function () {
-  const strip = document.getElementById('photosStrip');
-  const prevBtn = document.getElementById('photosPrev');
-  const nextBtn = document.getElementById('photosNext');
+  const strip = document.getElementById("photosStrip");
+  const prevBtn = document.getElementById("photosPrev");
+  const nextBtn = document.getElementById("photosNext");
+
   if (!strip || !prevBtn || !nextBtn) return;
 
-  let currentIndex = 0;
-  const cards = strip.querySelectorAll('.photo-card');
-  
-  function updateScroll() {
-    if (cards.length === 0) return;
-    const cardWidth = cards[0].offsetWidth + 20; // 20px de gap
-    strip.scrollTo({
-      left: currentIndex * cardWidth,
-      behavior: 'smooth'
-    });
+  function getScrollAmount() {
+    const firstCard = strip.querySelector(".photo-card");
+
+    if (!firstCard) return 280;
+
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(strip).gap) || 0;
+
+    return cardWidth + gap;
   }
 
-  nextBtn.addEventListener('click', () => {
-    currentIndex++;
-    if (currentIndex >= cards.length - 3) { 
-      currentIndex = 0; // Revient au début
+  nextBtn.addEventListener("click", () => {
+    const maxScroll = strip.scrollWidth - strip.clientWidth;
+
+    if (strip.scrollLeft >= maxScroll - 5) {
+      // Retour au début
+      strip.scrollTo({
+        left: 0,
+        behavior: "smooth"
+      });
+    } else {
+      strip.scrollBy({
+        left: getScrollAmount(),
+        behavior: "smooth"
+      });
     }
-    updateScroll();
   });
 
-  prevBtn.addEventListener('click', () => {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = cards.length - 4; 
+  prevBtn.addEventListener("click", () => {
+    const maxScroll = strip.scrollWidth - strip.clientWidth;
+
+    if (strip.scrollLeft <= 5) {
+      // Retour à la fin
+      strip.scrollTo({
+        left: maxScroll,
+        behavior: "smooth"
+      });
+    } else {
+      strip.scrollBy({
+        left: -getScrollAmount(),
+        behavior: "smooth"
+      });
     }
-    updateScroll();
   });
 })();
 
@@ -90,15 +108,23 @@ sections.forEach(section => observer.observe(section));
 const menuBtn = document.querySelector('.menu');
 const mainNav = document.querySelector('nav');
 
-if (menuBtn && mainNav) {
-  menuBtn.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
+ if (!menuBtn || !mainNav) return;
+
+  menuBtn.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.setAttribute(
+      "aria-label",
+      isOpen ? "Fermer le menu" : "Ouvrir le menu"
+    );
   });
 
-  // referme le menu automatiquement quand on clique un lien
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
+  // Fermer le menu lorsqu'on clique sur un lien
+  mainNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.setAttribute("aria-label", "Ouvrir le menu");
     });
   });
-}
