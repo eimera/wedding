@@ -841,3 +841,105 @@ footer {
   .rsvp h2 { font-size: 47px; }
   footer { flex-direction: column; gap: 20px; text-align: center; }
 }
+
+/* ========================================
+   PAGE LES MARIÉS — RESPONSIVE
+======================================== */
+
+/* Tablettes */
+@media (max-width: 850px) {
+  .contact-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    width: 100%;
+  }
+
+  .contact-person {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* Téléphones */
+@media (max-width: 650px) {
+
+  /* Section des mariés */
+  .heb-hero {
+    padding: 105px 6vw 65px;
+  }
+
+  .heb-intro {
+    font-size: 17px;
+    padding: 0 10px;
+  }
+
+  .contact-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    width: 100%;
+  }
+
+  .contact-person {
+    width: 100%;
+    max-width: 420px;
+    padding: 25px 18px;
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(40,51,47,.07);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(43,39,29,.05);
+  }
+
+  .contact-photo {
+    width: min(220px, 75vw);
+    height: min(220px, 75vw);
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  .contact-person h2 {
+    font-size: 38px;
+  }
+
+  .contact-person h4 {
+    font-family: "Cormorant Garamond";
+    font-size: 21px;
+    color: var(--forest);
+    margin: 15px 0 8px;
+  }
+
+  .contact-person p {
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  /* Galerie photos */
+  .section.photos {
+    padding: 0 6vw 65px;
+  }
+
+  .photos-strip-wrap {
+    width: 100%;
+  }
+
+  .photos-strip {
+    gap: 12px;
+    padding: 0 2px 8px;
+  }
+
+  .photo-card {
+    width: 190px;
+  }
+
+  .photo-card img {
+    height: 240px;
+    border-radius: 7px;
+  }
+
+  .photos-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
