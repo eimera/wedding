@@ -104,7 +104,11 @@ sections.forEach(section => observer.observe(section));
   });
 })();
 
-// Gestion du menu mobile
+
+// GESTION DU MENU MOBILE
+const menuBtn = document.querySelector(".menu");
+const mainNav = document.querySelector(".site-header nav");
+
 if (menuBtn && mainNav) {
   menuBtn.addEventListener("click", () => {
     const isOpen = mainNav.classList.toggle("open");
@@ -125,3 +129,4 @@ if (menuBtn && mainNav) {
     });
   });
 }
+
