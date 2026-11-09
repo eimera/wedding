@@ -524,7 +524,7 @@ blockquote {
 
   /* Recentrage du château */
   .hero {
-    background-position: center, 48% center;
+    background-position: center, 47% center;
     background-size: cover, cover;
   }
 
@@ -943,3 +943,4 @@ footer {
     height: 36px;
     font-size: 18px;
   }
+}
