@@ -105,11 +105,7 @@ sections.forEach(section => observer.observe(section));
 })();
 
 // Gestion du menu mobile
-const menuBtn = document.querySelector('.menu');
-const mainNav = document.querySelector('nav');
-
- if (!menuBtn || !mainNav) return;
-
+if (menuBtn && mainNav) {
   menuBtn.addEventListener("click", () => {
     const isOpen = mainNav.classList.toggle("open");
 
@@ -128,3 +124,4 @@ const mainNav = document.querySelector('nav');
       menuBtn.setAttribute("aria-label", "Ouvrir le menu");
     });
   });
+}
