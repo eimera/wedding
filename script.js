@@ -1,4 +1,4 @@
-const weddingDate = new Date("2027-11-13T16:30:00+01:00");
+const weddingDate = new Date("2027-11-13T14:00:00+01:00").getTime();
 
 function updateCountdown() {
   const daysEl = document.getElementById("days");
@@ -8,11 +8,11 @@ function updateCountdown() {
   const diff = weddingDate - now;
 
   if (diff <= 0) {
-    ["days", "hours", "minutes", "seconds"].forEach(id => {
-      document.getElementById(id).textContent = "0";
-    });
-    return;
-  }
+  document.getElementById("countdown").innerHTML =
+    "<p>Le grand jour est arrivé ! ♥</p>";
+  clearInterval(countdownInterval);
+  return;
+}
 
   const days = Math.floor(diff / 86400000);
   const hours = Math.floor(diff / 3600000) % 24;
@@ -26,7 +26,7 @@ function updateCountdown() {
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
+const countdownInterval = setInterval(updateCountdown, 1000);
 
 const header = document.querySelector(".site-header");
 window.addEventListener("scroll", () => {
