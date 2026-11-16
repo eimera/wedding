@@ -199,7 +199,10 @@ nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   color: var(--forest);
 }
 .heb-body .button + .button { margin-top: 8px; }
-.heb-back { text-align: center; margin-top: 60px; }
+.heb-back {
+  text-align: center;
+  margin-top: 0;
+}
 
 @media (max-width: 1000px) {
   .heb-grid { grid-template-columns: repeat(2, 1fr); }
@@ -980,5 +983,25 @@ footer {
     width: 36px;
     height: 36px;
     font-size: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .bonus-section {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .universe {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .heb-back {
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
   }
 }
