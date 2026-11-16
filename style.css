@@ -987,21 +987,33 @@ footer {
 }
 
 @media (max-width: 650px) {
+
   .bonus-section {
-    display: flex;
-    flex-direction: column !important;
-    align-items: center;
-    gap: 20px;
+    display: block !important;
+    width: 100%;
+    padding: 20px 6vw 65px;
   }
 
-  .universe {
+  .bonus-section .universe {
+    display: block;
     width: 100%;
     max-width: 600px;
+    margin: 0 auto;
   }
 
-  .heb-back {
+  .bonus-section .heb-back {
+    display: block;
+    position: static !important;
+    float: none !important;
+    clear: both;
     width: 100%;
-    margin-top: 0;
+    margin: 25px auto 0;
     text-align: center;
   }
+
+  .bonus-section .heb-back .button {
+    display: inline-block;
+    max-width: 100%;
+  }
+
 }
